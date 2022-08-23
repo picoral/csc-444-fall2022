@@ -18,14 +18,14 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Access full syllabus in pdf format\nMeets: TuTh 2:00PM - 3:15PM, Gould-Simpson, Rm 228"
+    "text": "Access full syllabus in pdf format\nMeets: TuTh 2:00PM - 3:15PM, Gould-Simpson, Rm 906"
   },
   {
     "objectID": "syllabus.html#course-calendar",
     "href": "syllabus.html#course-calendar",
     "title": "Syllabus",
     "section": "Course Calendar",
-    "text": "Course Calendar\n(tentative, subject to change)\n\n\n\nWeek\nDate\nDescription\nAssignments\n\n\n\n\n1\nAug 23\nIntroduction\n\n\n\n\nAug 25\nHTML/CSS/SVG basics\nAssignment 1\n\n\n2\nAug 30\nJavascript basics\n\n\n\n\nSep 1\nJavascript + DOM, SVG\n\n\n\n3\nSep 6\nd3 basics\n\n\n\n\nSep 8\n\n\n\n\n4\nSep 13\n\n\n\n\n\nSep 15\n\n\n\n\n5\nSep 20\n\n\n\n\n\nSep 22\n\n\n\n\n6\nSep 27\n\n\n\n\n\nSep 29\n\n\n\n\n7\nOct 4\n\n\n\n\n\nOct 6\n\n\n\n\n8\nOct 11\nMidterm\n\n\n\n\nOct 13\n\n\n\n\n9\nOct 18\n\n\n\n\n\nOct 20\n\n\n\n\n10\nOct 25\n\n\n\n\n\nOct 27\n\n\n\n\n11\nNov 1\n\n\n\n\n\nNov 3\n\n\n\n\n12\nNov 8\n\n\n\n\n\nNov 10\n\n\n\n\n13\nNov 15\n\n\n\n\n\nNov 17\n\n\n\n\n14\nNov 22\n\n\n\n\n\nNov 24\nThanksgiving recess begins with no classes until Monday\n\n\n\n15\nNov 29\n\n\n\n\n\nDec 1\n\n\n\n\n16\nDec 6\nFinal exam review\n\n\n\n17\nDec 12 (Monday)\nFinal exam (3:30pm - 5:30pm)"
+    "text": "Course Calendar\nSee course schedule."
   },
   {
     "objectID": "syllabus.html#important-dates",
@@ -60,7 +60,7 @@
     "href": "syllabus.html#instructor-and-contact-information",
     "title": "Syllabus",
     "section": "Instructor and Contact Information",
-    "text": "Instructor and Contact Information\n\nInstructor of Record: Adriana Picoral (she/her/hers)\nOffice: Gould-Simpson 829\nEmail: adrianaps@arizona.edu\nOffice Hours: Mo 3:15-4:45pm and Tu 3:30-5:00pm\nD2L: https://d2l.arizona.edu/d2l/home/1195142\nTA: Tanner Finken (finkent@arizona.edu)"
+    "text": "Instructor and Contact Information\n\nInstructor of Record: Adriana Picoral (she/her/hers)\nOffice: Gould-Simpson 829\nEmail: adrianaps@arizona.edu\nOffice Hours: Mo 3:15-4:45pm and Tu 3:30-5:00pm\n\nSchedule at calendly.com/adrianapicoral/office-hours-csc or drop in (I prioritize scheduled students)\n\nD2L: https://d2l.arizona.edu/d2l/home/1195142\nTA: Tanner Finken (finkent@arizona.edu)"
   },
   {
     "objectID": "syllabus.html#course-format-and-teaching-methods",
@@ -229,5 +229,19 @@
     "title": "Syllabus",
     "section": "Subject to Change Statement",
     "text": "Subject to Change Statement\nInformation contained in the course syllabus, other than the grade and absence policy, may be subject to change with advance notice, as deemed appropriate by the instructor."
+  },
+  {
+    "objectID": "slides/01-introduction.html",
+    "href": "slides/01-introduction.html",
+    "title": "CSC 444 Data Visualization",
+    "section": "",
+    "text": "This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "(tentative, subject to change)\n\n\n\nWeek\nDate\nDescription\nAssignments\n\n\n\n\n1\nAug 23\nIntroduction (slides)\n\n\n\n\nAug 25\nHTML/CSS/SVG basics\nAssignment 1\n\n\n2\nAug 30\nJavascript basics\n\n\n\n\nSep 1\nJavascript + DOM, SVG\n\n\n\n3\nSep 6\nd3 basics\n\n\n\n\nSep 8\n\n\n\n\n4\nSep 13\n\n\n\n\n\nSep 15\n\n\n\n\n5\nSep 20\n\n\n\n\n\nSep 22\n\n\n\n\n6\nSep 27\n\n\n\n\n\nSep 29\n\n\n\n\n7\nOct 4\n\n\n\n\n\nOct 6\n\n\n\n\n8\nOct 11\nMidterm\n\n\n\n\nOct 13\n\n\n\n\n9\nOct 18\n\n\n\n\n\nOct 20\n\n\n\n\n10\nOct 25\n\n\n\n\n\nOct 27\n\n\n\n\n11\nNov 1\n\n\n\n\n\nNov 3\n\n\n\n\n12\nNov 8\n\n\n\n\n\nNov 10\n\n\n\n\n13\nNov 15\n\n\n\n\n\nNov 17\n\n\n\n\n14\nNov 22\n\n\n\n\n\nNov 24\nThanksgiving recess begins with no classes until Monday\n\n\n\n15\nNov 29\n\n\n\n\n\nDec 1\n\n\n\n\n16\nDec 6\nFinal exam review\n\n\n\n17\nDec 12 (Monday)\nFinal exam (3:30pm - 5:30pm)"
   }
 ]
