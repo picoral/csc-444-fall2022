@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-0.9.449">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,25 +17,24 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,6 +104,7 @@ ul.task-list{list-style: none;}
    
   <ul>
   <li><a href="#assignment-1" id="toc-assignment-1" class="nav-link active" data-scroll-target="#assignment-1"><span>Assignment 1</span></a></li>
+  <li><a href="#assignment-2" id="toc-assignment-2" class="nav-link" data-scroll-target="#assignment-2"><span>Assignment 2</span></a></li>
   </ul>
 </nav>
     </div>
@@ -130,6 +130,78 @@ ul.task-list{list-style: none;}
 <section id="assignment-1" class="level1">
 <h1><a href="https://www.gradescope.com/courses/419524/assignments/2169114">Assignment 1</a></h1>
 <p><strong>Due date</strong>: August 25, 2022 1:59pm</p>
+</section>
+<section id="assignment-2" class="level1">
+<h1><a href="https://www.gradescope.com/courses/419524/assignments/2197065">Assignment 2</a></h1>
+<p><strong>Due date</strong>: September 1, 2022 11:59pm</p>
+<ol type="1">
+<li>Create an html file with a basic DOM structure</li>
+<li>Plot the 11 points from experiment 2 in Anscombe’s quartet data in svg</li>
+<li>Add labels and axes (required) and anything else you might want to (in other words, you are welcome to customize your plot to try different HTML/CSS/SVG elements)</li>
+<li>Your code must pass the validation at <a href="https://validator.w3.org/" class="uri">https://validator.w3.org/</a></li>
+</ol>
+<p>Points to plot:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td>9.14</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>8.14</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>8.74</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>8.77</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>9.26</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>8.1</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>6.13</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>3.1</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>9.13</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>7.26</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>4.74</td>
+</tr>
+</tbody>
+</table>
+<p>Here’s an example of the simplest solution for this challenge:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="assignment-01-example.png" class="img-fluid figure-img" alt="scatterplot showing eleven points from experiment 2 in Anscombe's data set, with x and y axis and a title" width="332"></p>
+</figure>
+</div>
+<p>You can read <a href="https://learning.oreilly.com/library/view/interactive-data-visualization/9781491921296/ch03.html#SVG_3">Murray Chapter 3 SVG</a> for more help on how to solve this assignment.</p>
 
 
 </section>
@@ -137,24 +209,6 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
   const disableStylesheet = (stylesheets) => {
     for (let i=0; i < stylesheets.length; i++) {
       const stylesheet = stylesheets[i];
@@ -184,14 +238,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     manageTransitions('#quarto-margin-sidebar .nav-link', false);
     if (alternate) {
       enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
     } else {
       disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
     }
     manageTransitions('#quarto-margin-sidebar .nav-link', true);
     // Switch the toggles

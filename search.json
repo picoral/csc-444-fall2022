@@ -39,7 +39,7 @@
     "href": "assignments.html",
     "title": "Assignments",
     "section": "",
-    "text": "Due date: August 25, 2022 1:59pm"
+    "text": "Assignment 2\nDue date: September 1, 2022 11:59pm\n\nCreate an html file with a basic DOM structure\nPlot the 11 points from experiment 2 in Anscombe’s quartet data in svg\nAdd labels and axes (required) and anything else you might want to (in other words, you are welcome to customize your plot to try different HTML/CSS/SVG elements)\nYour code must pass the validation at https://validator.w3.org/\n\nPoints to plot:\n\n\n\nx\ny\n\n\n\n\n10\n9.14\n\n\n8\n8.14\n\n\n13\n8.74\n\n\n9\n8.77\n\n\n11\n9.26\n\n\n14\n8.1\n\n\n6\n6.13\n\n\n4\n3.1\n\n\n12\n9.13\n\n\n7\n7.26\n\n\n5\n4.74\n\n\n\nHere’s an example of the simplest solution for this challenge:\n\n\n\n\n\nYou can read Murray Chapter 3 SVG for more help on how to solve this assignment."
   },
   {
     "objectID": "syllabus.html#description-of-course",
@@ -242,6 +242,6 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "(tentative, subject to change)\n\n\n\nWeek\nDate\nDescription\nAssignments\n\n\n\n\n1\nAug 23\nIntroduction (slides)\n\n\n\n\nAug 25\nHTML/CSS/SVG basics\nAssignment 1\n\n\n2\nAug 30\nJavascript basics\n\n\n\n\nSep 1\nJavascript + DOM, SVG\n\n\n\n3\nSep 6\nd3 basics\n\n\n\n\nSep 8\n\n\n\n\n4\nSep 13\n\n\n\n\n\nSep 15\n\n\n\n\n5\nSep 20\n\n\n\n\n\nSep 22\n\n\n\n\n6\nSep 27\n\n\n\n\n\nSep 29\n\n\n\n\n7\nOct 4\n\n\n\n\n\nOct 6\n\n\n\n\n8\nOct 11\nMidterm\n\n\n\n\nOct 13\n\n\n\n\n9\nOct 18\n\n\n\n\n\nOct 20\n\n\n\n\n10\nOct 25\n\n\n\n\n\nOct 27\n\n\n\n\n11\nNov 1\n\n\n\n\n\nNov 3\n\n\n\n\n12\nNov 8\n\n\n\n\n\nNov 10\n\n\n\n\n13\nNov 15\n\n\n\n\n\nNov 17\n\n\n\n\n14\nNov 22\n\n\n\n\n\nNov 24\nThanksgiving recess begins with no classes until Monday\n\n\n\n15\nNov 29\n\n\n\n\n\nDec 1\n\n\n\n\n16\nDec 6\nFinal exam review\n\n\n\n17\nDec 12 (Monday)\nFinal exam (3:30pm - 5:30pm)"
+    "text": "(tentative, subject to change)\n\n\n\nWeek\nDate\nDescription\nAssignments\nReadings\n\n\n\n\n1\nAug 23\nIntroduction (slides)\n\n\n\n\n\nAug 25\nHTML/CSS/SVG basics (slides)\nAssignment 1\nComplementary (optional, after class): The Basics of the Web Stack\n\n\n2\nAug 30\nJavascript basics\n\nRequired (before class): Murray, Chapter 3, pages 36-52 (JavaScript section)\nComplementary (optional, before class): JavaScript, The Very Basics\n\n\n\nSep 1\nJavascript + DOM, SVG\nAssignment 2 due\n\n\n\n3\nSep 6\nd3 basics\n\nRequired (before class): Murray, Chapter 5, and Chapter 6\n\n\n\nSep 8\n\n\n\n\n\n4\nSep 13\n\n\n\n\n\n\nSep 15\n\n\n\n\n\n5\nSep 20\n\n\n\n\n\n\nSep 22\n\n\n\n\n\n6\nSep 27\n\n\n\n\n\n\nSep 29\n\n\n\n\n\n7\nOct 4\n\n\n\n\n\n\nOct 6\n\n\n\n\n\n8\nOct 11\nMidterm\n\n\n\n\n\nOct 13\n\n\n\n\n\n9\nOct 18\n\n\n\n\n\n\nOct 20\n\n\n\n\n\n10\nOct 25\n\n\n\n\n\n\nOct 27\n\n\n\n\n\n11\nNov 1\n\n\n\n\n\n\nNov 3\n\n\n\n\n\n12\nNov 8\n\n\n\n\n\n\nNov 10\n\n\n\n\n\n13\nNov 15\n\n\n\n\n\n\nNov 17\n\n\n\n\n\n14\nNov 22\n\n\n\n\n\n\nNov 24\nThanksgiving recess begins with no classes until Monday\n\n\n\n\n15\nNov 29\n\n\n\n\n\n\nDec 1\n\n\n\n\n\n16\nDec 6\nFinal exam review\n\n\n\n\n17\nDec 12 (Monday)\nFinal exam (3:30pm - 5:30pm)"
   }
 ]
