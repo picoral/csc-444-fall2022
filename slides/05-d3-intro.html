@@ -3238,11 +3238,11 @@ slide:not(.current) .plotly.html-widget{
 </ol>
 
 <pre class = 'prettyprint lang-javascript'>var forecasts = [
-    { &quot;city&quot;: &quot;DCA&quot;, &quot;temperature&quot;: 92,  order: 0 },
-    { &quot;city&quot;: &quot;JFK&quot;, &quot;temperature&quot;: 96,  order: 1 },
-    { &quot;city&quot;: &quot;SEA&quot;, &quot;temperature&quot;: 77,  order: 2 },
-    { &quot;city&quot;: &quot;TUS&quot;, &quot;temperature&quot;: 102, order: 3 },
-    { &quot;city&quot;: &quot;SFO&quot;, &quot;temperature&quot;: 65,  order: 4 }
+    { city: &quot;DCA&quot;, temperature: 92,  order: 0 },
+    { city: &quot;JFK&quot;, temperature: 96,  order: 1 },
+    { city: &quot;SEA&quot;, temperature: 77,  order: 2 },
+    { city: &quot;TUS&quot;, temperature: 102, order: 3 },
+    { city: &quot;SFO&quot;, temperature: 65,  order: 4 }
 ];
 </pre>
 
@@ -3286,8 +3286,11 @@ var mainDiv = d3.select(&quot;#mainDiv&quot;);
 // append svg element and assign node to variable
 var svg1 = mainDiv.append(&quot;svg&quot;);
 
+// data
+my_data = [{x: 10, y: 10}, {x: 20, y: 20}, {x: 30, y: 30}]
+
 svg1.selectAll(&quot;circle&quot;)
-  .data([{x: 10, y: 10}, {x: 20, y: 20}, {x: 30, y: 30}])
+  .data(my_data)
   .enter().append(&quot;circle&quot;)
   .attr(&quot;cx&quot;, function(d) { return d.x; })
   .attr(&quot;cy&quot;, function(d) { return d.y; })
@@ -3299,7 +3302,108 @@ svg1.selectAll(&quot;circle&quot;)
 
 <p>Using the data in <a href='source/driver_fatalities.js' title=''>driver_fatalities.js</a>, draw a scatterplot using <code>.data(UkDriverFatalities).enter().append(&quot;circle&quot;). ...</code></p>
 
-<p>Add the two axis lines.</p></article></slide>
+<p>Add the two axes.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Scales</h2></hgroup><article  id="scales">
+
+</article></slide><slide class=""><hgroup><h2>Scales in D3</h2></hgroup><article  id="scales-in-d3">
+
+<blockquote>
+<p>&ldquo;Scales are functions that map from an input domain to an output range.&rdquo;</p>
+</blockquote>
+
+<p align="right">
+
+– Mike Bostock
+
+</p>
+
+<ul>
+<li>Problem: values in data does not match x and y coordinates on the SVG canvas</li>
+<li>Solution: transform data in a consistent manner (a.k.a. normalization), with the following definitions
+
+<ul>
+<li>input <strong>domain</strong>: range of possible input data values</li>
+<li>output <strong>range</strong>: range of possible output values (in pixels)</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Scales in D3</h2></hgroup><article  id="scales-in-d3-1">
+
+<pre class = 'prettyprint lang-javascript'>// create a 1:1 scale
+var my_scale = d3.scaleLinear();
+
+my_scale(2.5); // returns input value because it&#39;s a 1:1 scale</pre>
+
+</article></slide><slide class=""><hgroup><h2>Scales in D3</h2></hgroup><article  id="scales-in-d3-2">
+
+<pre class = 'prettyprint lang-javascript'>// set domain and range
+my_scale.domain([100, 500]);
+my_scale.range([10, 350]);</pre>
+
+<p>You can also do all together</p>
+
+<pre class = 'prettyprint lang-javascript'>var my_scale = d3.scaleLinear()
+              .domain([100, 500])
+              .range([10, 350]);
+              
+my_scale(100); // returns 10
+my_scale(500); // returns 350</pre>
+
+</article></slide><slide class=""><hgroup><h2>Scales in D3</h2></hgroup><article  id="scales-in-d3-3">
+
+<p>To create your scale you need to know your domain – which is the range, or the min and max values in your data variable. Instead of doing this by hand, we will use <code>d3.min()</code> and <code>d3.max()</code></p>
+
+<pre class = 'prettyprint lang-javascript'>var simpleDataset = [7, 8, 4, 5, 2];
+d3.max(simpleDataset);  // returns 8
+d3.min(simpleDataset); // returns 2</pre>
+
+</article></slide><slide class=""><hgroup><h2>Scales in D3</h2></hgroup><article  id="scales-in-d3-4">
+
+<p>For data that is organized as <code>json</code> or a dictionary, like it is the case for our ukDriverFatalities data, we need to use a function to return that specific variable for all objects.</p>
+
+<pre class = 'prettyprint lang-javascript'>d3.max(ukDriverFatalities, function(d) {return d.count});</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Challenge</h2></hgroup><article  id="challenge-2">
+
+</article></slide><slide class=""><hgroup><h2>Scales in D3</h2></hgroup><article  id="scales-in-d3-5">
+
+<p>Modify your driver_fatalities code so you use scales instead</p>
+
+<pre class = 'prettyprint lang-javascript'>// create two scales, one for y and one for x
+var scale_year = d3.scaleLinear() ...
+
+var scale_count = d3.scaleLinear() ...</pre>
+
+<p>Remember that for the domain you can get the max and min from your data</p>
+
+<pre class = 'prettyprint lang-javascript'>d3.min(ukDriverFatalities, function(d) {return d.year})</pre>
+
+<p>And to call your scales, you can use something like this:</p>
+
+<pre class = 'prettyprint lang-javascript'>function(d) { return scale_year(d.year); }</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>D3 axes</h2></hgroup><article  id="d3-axes">
+
+</article></slide><slide class=""><hgroup><h2>Using D3 axis methods</h2></hgroup><article  id="using-d3-axis-methods">
+
+<pre class = 'prettyprint lang-javascript'>// create a y (left) axis with the scale we created
+var y_axis = d3.axisLeft().scale(scale_count);
+
+// append a group to our SVG that is a little dislocated
+// add our axis to it
+svg1.append(&quot;g&quot;)
+       .attr(&quot;transform&quot;, &quot;translate(50, 50)&quot;)
+       .call(y_axis);</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Reading data</h2></hgroup><article  id="reading-data">
+
+</article></slide><slide class=""><hgroup><h2>CSV</h2></hgroup><article  id="csv">
+
+<pre class = 'prettyprint lang-javascript'>d3.csv(&quot;https://raw.githubusercontent.com/picoral/csc-444-data/main/anscombe_tidy.csv&quot;, 
+       function(data) {
+         console.log(data);
+         });</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
