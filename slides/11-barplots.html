@@ -3291,6 +3291,22 @@ hover: {
   strokeWidth: { value: 2 },
   stroke: { value: &quot;black&quot; }
   
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>Other data transformations</h2></hgroup><article  id="other-data-transformations">
+
+<pre class = 'prettyprint lang-javascript'>{
+  name: &quot;aggregated&quot;,
+  source: &quot;ferrisWheels&quot;,
+  transform: [
+    {
+      type: &quot;aggregate&quot;,
+      groupby: [&quot;country&quot;],
+      fields: [&quot;height&quot;],
+      ops: [&quot;mean&quot;],
+      as: [&quot;m&quot;]
+    }
+  ]
 }</pre></article></slide>
 
 
