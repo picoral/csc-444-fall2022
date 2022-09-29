@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CSC 444 Midterm Study Guide</title>
+        <meta charset="UTF-8" />
+        <script src="https://vega.github.io/vega/vega.min.js"></script>
+    </head>
+
+    <body>
+        <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+            <h1>Question 1 - Scales</h1>
+        </div>
+        <div id="question_1_a" class="plot" style="width: 50%; float:left;"></div>
+        <div id="question_1_b" class="plot" style="width: 50%; margin-left: 50%;"></div>
+        <div>
+            <p style="font-family: Arial, Helvetica, sans-serif;">The specs for the two plots above have just one property that is different between them. 
+                Complete the spec below for both plots.
+            </p>
+        </div>
+
+            <div style="border: 3px; border-color: black; border-style: double; padding: 10px;">
+                <h3 style="font-family: Arial, Helvetica, sans-serif;">Plot 1</h3>
+                <pre>
+                    <code>
+                    scales: [
+                                {
+                                    name: "xScale",
+                                    domain: [2014, 2018],
+                                    range: "width",
+                                    zero: false
+                                },
+                                {
+                                    name: "yScale",
+                                    domain: { data: "aggregated", field: "m" },
+                                    range: "height",
+                                    zero: true
+                                }
+                            ]
+                    </pre>
+                </code>
+                <h3 style="font-family: Arial, Helvetica, sans-serif;">Plot 2</h3>
+                <pre>
+                    <code>
+                    scales: [
+                                {
+                                    name: "xScale",
+                                    domain: [2014, 2018],
+                                    range: "width",
+                                    zero: false
+                                },
+                                {
+                                    name: "yScale",
+                                    domain: { data: "aggregated", field: "m" },
+                                    range: "height",
+                                    zero: false
+                                }
+                            ]
+                    </pre>
+                </code>
+            </div>
+            <div>
+                <p style="font-family: Arial, Helvetica, sans-serif;">
+                    What are the pros and cons of each scale? Which scale reflects the data more accurately in your opinion?
+                </p>
+            </div>
+            <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+            <p>The first plot shows the scale starting at zero for dollars (y) which makes the differences in price point less drastic but more realistic.
+                If you want to make the point that avocados were more expensive in 2017, you'd use the non-zero scale (plot 2).
+            </p>
+            </div>
+
+            <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                <h1>Question 2 - Bar Plots</h1>
+                <h2>Question 2a - ordering unordered categorical variables</h2>
+            </div>
+            <div id="question_2_a" class="plot" style="width: 50%; float:left;"></div>
+            <div id="question_2_b" class="plot" style="width: 50%; margin-left: 50%;"></div>
+            <div>
+                <p style="font-family: Arial, Helvetica, sans-serif;">The specs for the two plots above have just one property that is different between them. 
+                    Complete the spec below for plot 2 to sort the bars.
+                </p>
+            </div>
+    
+            <div style="border: 3px; border-color: black; border-style: double; padding: 10px;">
+                <h3 style="font-family: Arial, Helvetica, sans-serif;">Plot 2</h3>
+                <pre>
+                    <code>
+                        ...
+                        data: [
+                                {
+                                name: "lego_themes",
+                                url: "https://raw.githubusercontent.com/picoral/csc-444-data/main/lego_themes.json",
+                                transform: [
+                                    {
+                                      type: "collect",
+                                      sort: { field: "n", order: "descending" }
+                                    }
+                                ]
+                            }
+                        ],
+                        scales: [
+                            {
+                                name: "xScale",
+                                type: "band",
+                                domain: { data: "lego_themes", field: "theme"},
+                                range: "width",
+                                padding: 0.6
+                            },
+                            {
+                                name: "yScale",
+                                type: "linear",
+                                domain: { data: "lego_themes", field: "n" },
+                                range: "height"
+                            }
+                        ],
+                        ...
+                    </pre>
+                </code>
+            </div>
+            <div>
+                <p style="font-family: Arial, Helvetica, sans-serif;">
+                    Why is sorting bars by the numeric variable recommended in this case?
+                </p>
+            </div>
+            <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+            <p>Theme is an unordered categorical variable, so there's no reason to order them by alphabetical order. By ordering them by the numeric variable, it's much easier to identify the categories with the highest and lowest counts.</p>
+            </div>
+
+            <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                <h2>Question 2b - Labeling bars</h2>
+            </div>
+            <div id="question_2_c" class="plot" style="width: 50%; float:left;"></div>
+            <div id="question_2_d" class="plot" style="width: 50%; margin-left: 50%;"></div>
+            <div>
+                <p style="font-family: Arial, Helvetica, sans-serif;">The specs for the two plots above have just one property that is different between them. 
+                    Complete the spec below for plot 2 to add values to the bars.
+                </p>
+            </div>
+    
+            <div style="border: 3px; border-color: black; border-style: double; padding: 10px;">
+                <h3 style="font-family: Arial, Helvetica, sans-serif;">Plot 2</h3>
+                <pre>
+                    <code>
+                        ...
+                        marks: [
+                            {
+                                type: "rect",
+                                from: { data: "lego_themes" },
+                                encode: {
+                                    enter: {
+                                        x: { field: "theme", scale: "xScale"},
+                                        y2: { value: 0, scale: "yScale"},
+                                        y: { field: "n", scale: "yScale"},
+                                        width: { value: 30}
+                                    }
+                                }
+                            },
+                            {
+                                type: "text",
+                                from: { data: "lego_themes" },
+                                encode: {
+                                    enter: {
+                                        x: { field: "theme", scale: "xScale" },
+                                        y: { field: "n", scale: "yScale" },
+                                        text: { field: "n"},
+                                        dy: { value: 10 },
+                                        dx: { value: 5 },
+                                        fill: { value: "white" }
+                                    }
+                                }
+                            }
+                        ],
+                        ...
+                    </pre>
+                </code>
+                </div>
+                <div>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">
+                        List one advantage and one disadvantage of adding values to bars in a bar plot.
+                    </p>
+                </div>
+                <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+                One advantage is that the duplicate information makes the values more obvious, but the disadvantage is the duplication of information (not maximizing data to ink).
+                </div>
+
+                <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                    <h1>Question 3 - Stacked Bar Plots</h1>
+                    <h2>Question 3a - labeling and ordering unordered categorical variables</h2>
+                </div>
+                <div id="question_3_a" class="plot" style="width: 50%; float:left;"></div>
+                <div id="question_3_b" class="plot" style="width: 50%; margin-left: 50%;"></div>
+                <div>
+                    <p style="font-family: Arial, Helvetica, sans-serif;">The specs for the two plots above have just two properties that are different between them. 
+                        Complete the spec below for plot 2 to sort the bars, and add a legend. You can look at <a href="https://raw.githubusercontent.com/picoral/csc-444-data/main/artists.json">the data and the variables you have available</a>.
+                    </p>
+                </div>
+        
+                <div style="border: 3px; border-color: black; border-style: double; padding: 10px;">
+                    <h3 style="font-family: Arial, Helvetica, sans-serif;">Plot 2</h3>
+                    <pre>
+                        <code>
+        // create spec
+        var spec = { 
+            $schema: "https://vega.github.io/schema/vega/v5.json",
+            description: "A bar plot of Artists in the USA",
+            width: 800,
+            height: 500,
+            padding: 50,
+            autosize: "fit",
+            data: [
+                {
+                    name: "artists",
+                    url: "https://raw.githubusercontent.com/picoral/csc-444-data/main/artists.json",
+                    transform: [
+                        {
+                            type: "stack",
+                            groupby: ["type"],
+                            field: "percent",
+                            as: ["x0", "x1"],
+                            sort: { field: "race" }
+                        },
+                        {
+                            type: "collect",
+                            sort: { field: "max" }
+                        }
+                    ]
+                }
+            ],
+            scales: [
+            {
+                name: "xScale",
+                type: "linear",
+                domain: [0, 1],
+                range: "width"
+            },
+            {
+                name: "yScale",
+                type: "band",
+                domain: { data: "artists", field: "type"},
+                range: "height",
+                padding: .5
+            },
+            {
+                name: "colorScale",
+                type: "ordinal",
+                domain: { data: "artists", field: "race" },
+                range: {"scheme": "category20"}
+            }
+            ],
+            axes: [
+            {
+                scale: "xScale",
+                orient: "bottom"
+            },
+            {
+                scale: "yScale",
+                orient: "left"
+            }
+            ],
+            marks: [
+            {
+                type: "rect",
+                from: { data: "artists" },
+                encode: {
+                enter: {
+                    x: { field: "x0", scale: "xScale"},
+                    x2: { field: "x1", scale: "xScale"},
+                    y: { field: "type", scale: "yScale" },
+                    height: { value: 20 },
+                    fill: { field: "race", scale: "colorScale"}
+                }
+                }
+            }
+            ],
+            legends: [
+              {
+                fill: "colorScale"
+              }
+            ]
+        };
+                        </pre>
+                    </code>
+                    </div>
+                    <div>
+                        <p style="font-family: Arial, Helvetica, sans-serif;">
+                            Explain why the sorted version is better.
+                        </p>
+                    </div>
+                    
+                    <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+                        There's a lot of information in this plot. Comparing bar lengths is not easy, by sorting by the longest bar at least we know which artist categories have the least and most percentage of white people.
+                    
+                    </div>
+                    <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                        <h2>Question 3b - Representing percentages</h2>
+                    </div>
+                    <div id="question_3_c" class="plot" style="width: 50%; float:left;"></div>
+                    <div id="question_3_d" class="plot" style="width: 50%; margin-left: 50%;"></div>
+                    <div>
+                        <p style="font-family: Arial, Helvetica, sans-serif;">
+                            Why is plot 1 preferable over plot 2?
+                        </p>
+                    </div>
+                    <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+                    The bars in plot are too skinny, they are hard to read, and to compare heights (if ordering race by value, each group would have a different order, which would be more confusing),
+                    Since the percentages sum up to 1, plot 1 makes more sense because then the bars across artist types are all the same lenght, so we can focus on the proportions for race better.
+                    </div>
+    </body>
+
+    <script src="source/question_1_a.js"></script>
+    <script src="source/question_1_b.js"></script>
+    <script src="source/question_2_a.js"></script>
+    <script src="source/question_2_b.js"></script>
+    <script src="source/question_2_c.js"></script>
+    <script src="source/question_2_d.js"></script>
+    <script src="source/question_3_a.js"></script>
+    <script src="source/question_3_b.js"></script>
+    <script src="source/question_3_c.js"></script>
+    <script src="source/question_3_d.js"></script>
+    
+</html>
