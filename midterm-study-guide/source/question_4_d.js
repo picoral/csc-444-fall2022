@@ -73,7 +73,7 @@ var spec = {
         }
     ],
     title: {
-        text: "Plot 1: Broadway average ticket price by weekly gross"
+        text: "Plot 2: Weekly gross across week number play is on Broadway"
     }
 };
 
