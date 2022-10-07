@@ -305,6 +305,50 @@
                     The bars in plot are too skinny, they are hard to read, and to compare heights (if ordering race by value, each group would have a different order, which would be more confusing),
                     Since the percentages sum up to 1, plot 1 makes more sense because then the bars across artist types are all the same lenght, so we can focus on the proportions for race better.
                     </div>
+
+                    <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                        <h1>Question 4 - Scatterplots</h1>
+                        <h2>Question 4a - Filtering Data</h2>
+                    </div>
+                    <div id="question_4_a" class="plot" style="width: 50%; float:left;"></div>
+                    <div id="question_4_b" class="plot" style="width: 50%; margin-left: 50%;"></div>
+                    <div>
+                        <p style="font-family: Arial, Helvetica, sans-serif;">
+                            
+                            Identify the differences between the two plots above. What are they? What would the differences in the spec be? (you can use prose to answer this)
+                            You can look at <a href="https://github.com/picoral/csc-444-data/blob/main/broadway.csv">the data and the variables you have available</a>.
+                        </p>
+                    </div>
+            
+                    
+                        <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+                            The scale for the first plot starts at (0, 0) and there are a number of data points with zero average price and zero total weekly income.
+                            In the second plot, the data has been filtered to eliminate the zero values and also to eliminate average ticket price that is higher than 100 dollars. <br>
+                            A data transform of type "filter" and using an expr: "datum.avg_ticket_price < 100 & datum.avg_ticket_price > 0" was used in the spec for the second plot.
+                        
+    
+                        </div>
+
+                    <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                        <h2>Question 4b - Color in Scatterplots</h2>
+                    </div>
+                    <div id="question_4_c" class="plot" style="width: 50%; float:left;"></div>
+                    <div id="question_4_d" class="plot" style="width: 50%; margin-left: 50%;"></div>
+                    <div>
+                        <p style="font-family: Arial, Helvetica, sans-serif;">
+                            
+                            Identify the differences between the two plots above. What are they? What would the differences in the spec be? (you can use prose to answer this)
+                            You can look at <a href="https://github.com/picoral/csc-444-data/blob/main/broadway.csv">the data and the variables you have available</a>.
+                        </p>
+                    </div>
+
+                    <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+                    The first plot has average price mapped to the y axis, and total weekly gross to the x axis. That shows that as the average ticket price increases so does total weekly gross income. <br>
+                    Two plays are shows -- a filter was applied to the data with the expression "datum.show == 'The Phantom of the Opera' || datum.show == 'The Lion King'" -- that is the case for both plots.<br>
+                    The first plot does show that the average price ticket and total weekly gross in dollars for The Lion King are higher compared to The Phantom of the Opera. <br>
+                    The second plot shows total weekly gross across week number. Again we see that the total weekly gross for The Lion King is higher, and that is the case across all weeks the plays were on Broadway.<br>
+                    There's also an increase in total weekly gross between weeks 30 and 35 for both plays.
+                    </div>
     </body>
 
     <script src="source/question_1_a.js"></script>
@@ -317,5 +361,9 @@
     <script src="source/question_3_b.js"></script>
     <script src="source/question_3_c.js"></script>
     <script src="source/question_3_d.js"></script>
+    <script src="source/question_4_a.js"></script>
+    <script src="source/question_4_b.js"></script>
+    <script src="source/question_4_c.js"></script>
+    <script src="source/question_4_d.js"></script>
     
 </html>
