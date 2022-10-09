@@ -349,6 +349,46 @@
                     The second plot shows total weekly gross across week number. Again we see that the total weekly gross for The Lion King is higher, and that is the case across all weeks the plays were on Broadway.<br>
                     There's also an increase in total weekly gross between weeks 30 and 35 for both plays.
                     </div>
+
+                    <div style="width: 100%; font-family: Arial, Helvetica, sans-serif;">
+                        <h1>Question 5 - Aggregating Data</h1>
+                    </div>
+                    <div id="question_5_a" class="plot" style="width: 50%; float:left;"></div>
+                    <div id="question_5_b" class="plot" style="width: 50%; margin-left: 50%;"></div>
+                    <div>
+                        <p style="font-family: Arial, Helvetica, sans-serif;">
+                            Complete the spec below for plot 2 to aggregate the data for <b>sum</b> for every week in every year each show was on Broadway. You can look at <a href="https://github.com/picoral/csc-444-data/blob/main/broadway.csv">the data and the variables you have available</a>.
+                        </p>
+                    </div>
+            
+                    <div style="border: 3px; border-color: black; border-style: double; padding: 10px;">
+                        <h3 style="font-family: Arial, Helvetica, sans-serif;">Plot 2</h3>
+                        <pre>
+                        <code>
+                        transform: [
+                            {
+                                type: "aggregate",
+                                groupby: ["week_number", "show"],
+                                fields: [weekly_gross],
+                                ops: [sum],
+                                as: ["total_gross"]
+                            }
+                        ]
+                    </pre>
+                        </code>
+                        </div>
+
+                    <div>
+                        <p style="font-family: Arial, Helvetica, sans-serif;">
+                            
+                            Identify the differences between the two plots above. What are they? What would the differences in the spec be? (you can use prose to answer this)
+                            You can look at <a href="https://github.com/picoral/csc-444-data/blob/main/broadway.csv">the data and the variables you have available</a>.
+                        </p>
+                    </div>
+                    <div style="height: 100px; border: 3px; border-color: black; border-style: double; padding: 10px;">
+                    The first plot shows an observation per week per show in multiple years that the show was on Broadway, with x mapped to week number in the season/year and y mapped to total weekly gross in US dollars.<br>
+                    The second plot has the same variables mapped to the x and y, but the difference is that instead of having multiple observations per week number for each show, the observations were summed up for all years.
+                    </div>
     </body>
 
     <script src="source/question_1_a.js"></script>
@@ -365,5 +405,7 @@
     <script src="source/question_4_b.js"></script>
     <script src="source/question_4_c.js"></script>
     <script src="source/question_4_d.js"></script>
+    <script src="source/question_5_a.js"></script>
+    <script src="source/question_5_b.js"></script>
     
 </html>
