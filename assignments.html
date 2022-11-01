@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.449">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,24 +17,25 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link class="quarto-color-scheme" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link class="quarto-color-scheme" href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link class="quarto-color-scheme quarto-color-alternate" rel="prefetch" href="site_libs/bootstrap/bootstrap-dark.min.css">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,6 +112,7 @@ ul.task-list{list-style: none;}
   <li><a href="#assignment-6" id="toc-assignment-6" class="nav-link" data-scroll-target="#assignment-6"><span>Assignment 6</span></a></li>
   <li><a href="#assignment-7" id="toc-assignment-7" class="nav-link" data-scroll-target="#assignment-7"><span>Assignment 7</span></a></li>
   <li><a href="#assignment-8" id="toc-assignment-8" class="nav-link" data-scroll-target="#assignment-8"><span>Assignment 8</span></a></li>
+  <li><a href="#assignment-9" id="toc-assignment-9" class="nav-link" data-scroll-target="#assignment-9"><span>Assignment 9</span></a></li>
   </ul>
 </nav>
     </div>
@@ -285,6 +287,17 @@ ul.task-list{list-style: none;}
 <li>Multiple views (facets) for one of the categorical variables</li>
 </ol>
 <p>Submit your project (index.html + .js file) as a zip file to Gradescope. You can work on this assignment individually or in groups (up to 3 people, make sure to add group members to the submission on Gradescope).</p>
+</section>
+<section id="assignment-9" class="level1">
+<h1><a href="https://www.gradescope.com/courses/419524/assignments/2402693">Assignment 9</a></h1>
+<p><strong>Due date</strong>: November 8, 2022 11:59pm</p>
+<p>The data for this assignment comes from the <a href="https://www.greatamericanbeerfestival.com/the-competition/winners/">Great American Beer Festival</a>. Using the <a href="https://github.com/picoral/csc-444-data/blob/main/beer_awards.csv">aggregated data on airline passenger survey</a> create a plot that includes:</p>
+<ol type="1">
+<li>A visualization of how many beer awards each state in the US got</li>
+<li>You can aggregate data over the years and medals, or encode year and medal (gold, silver, bronze) in your visualization</li>
+<li>The type of visualization (line, bar, map, etc.), and whether you are using interaction, is up to you and it has to make sense for your stated audience</li>
+<li>In your html include a paragraph stating what question your visualization answers, what audience you are targeting, and how that audience would be using your visualization.</li>
+</ol>
 
 
 </section>
@@ -292,6 +305,24 @@ ul.task-list{list-style: none;}
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const disableStylesheet = (stylesheets) => {
     for (let i=0; i < stylesheets.length; i++) {
       const stylesheet = stylesheets[i];
@@ -321,8 +352,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     manageTransitions('#quarto-margin-sidebar .nav-link', false);
     if (alternate) {
       enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
     } else {
       disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
     }
     manageTransitions('#quarto-margin-sidebar .nav-link', true);
     // Switch the toggles
