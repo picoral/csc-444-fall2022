@@ -3215,6 +3215,7 @@ slide:not(.current) .plotly.html-widget{
 <slide class=""><hgroup><h2>Agenda</h2></hgroup><article  id="agenda">
 
 <ul>
+<li>Examples of string concatenation</li>
 <li>How to implement a map visualization in Vega</li>
 <li>Case Study: Gapminder data
 
@@ -3224,7 +3225,34 @@ slide:not(.current) .plotly.html-widget{
 </ul></li>
 </ul>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Case Study: Gapminder data</h2></hgroup><article  id="case-study-gapminder-data">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>String Concatenation</h2></hgroup><article  id="string-concatenation">
+
+</article></slide><slide class=""><hgroup><h2>Tooltip in hover</h2></hgroup><article  id="tooltip-in-hover">
+
+<pre class = 'prettyprint lang-javascript'>hover: {
+  fill: { value: &quot;black&quot; },
+  tooltip: { signal: &quot;&#39;number of sets:\\n&#39;  + datum.n&quot; }
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>Transform</h2></hgroup><article  id="transform">
+
+<pre class = 'prettyprint lang-javascript'>{
+  type: &quot;formula&quot;,
+  expr: &quot;&#39;52 weeks of &#39; + datum.year&quot;,
+  as: [&quot;year&quot;]
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>Encode</h2></hgroup><article  id="encode">
+
+<p>From the <a href='https://vega.github.io/vega/examples/error-bars/' title=''>vega website example on error bars</a>:</p>
+
+<pre class = 'prettyprint lang-javascript'>update: {
+          y: { scale: &quot;yscale&quot;, field: &quot;variety&quot;, band: 0.5},
+          x: { scale: &quot;xscale&quot;, signal: &quot;datum[measure+&#39;0&#39;]&quot;},
+          x2: { scale: &quot;xscale&quot;, signal: &quot;datum[measure+&#39;1&#39;]&quot;}
+        }</pre>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Map Case Study: Gapminder data</h2></hgroup><article  id="map-case-study-gapminder-data">
 
 </article></slide><slide class=""><hgroup><h2>The data</h2></hgroup><article  id="the-data">
 
